@@ -1,0 +1,63 @@
+{%extends "users/base.html"%}
+{% load crispy_forms_tags %}
+{% block content %}
+<div class="container">
+
+
+    <div>
+        {% if form.errors %}
+        <p> Some Information Might be Incorrect </p>
+        {% endif %}
+    </div>
+    <div class="row">
+        <div class="col-md-3"></div>
+        <div class="col-md-9">
+
+            <div class="panel panel-default reg-panel">
+
+                <div class="panel-heading">
+                    <h3 class="text-center inst">Instagram</h3>
+                </div>
+                <div class="text-muted">
+                    <p class="text-center">Sign up to see photos and videos from your friends</p>
+                </div>
+                <div class="panel-body">
+
+                    <form action="" method="POST" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        {{form|crispy}}
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary btn-sm sign form-control" value="Sign Up"
+                                id='sign'>
+                        </div>
+
+                        <div class="text-muted">
+                            <p class="text-center">By signing up, you agree to our Terms , Data Policy and Cookies
+                                Policy .</p>
+                        </div>
+
+                        <input type="hidden" name="next" value="{{next}}">
+
+                    </form>
+
+                </div>
+                <div class="panel panel-white">
+                    <div class="panel-body">
+                        <p>Have an account? <a href="{% url 'login' %}">Login</a></p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+
+
+        >
+
+
+
+
+
+    </div>
+
+    {% endblock %}
