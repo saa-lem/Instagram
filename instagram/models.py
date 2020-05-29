@@ -32,3 +32,21 @@ class Image(models.Model):
 
     def get_absolute_url(self):
         return reverse('image-detail',kwargs = {'pk':self.pk} )
+
+
+
+class Comment(models.Model):
+    
+    image =models.ForeignKey(Image, related_name = 'image_comments',on_delete = models.CASCADE)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+   
+    content = models.TextField()
+
+    def __str__(self):
+        return self.content
+
+    def save_comments(self):
+        self.save()
+
+    def delete_comments(self):
+        self.delete()
