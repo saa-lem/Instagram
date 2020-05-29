@@ -51,4 +51,4 @@ def profile(request):
 
 
 class ProfileDetailView(LoginRequiredMixin, DetailView):
-    model = 
+    model = Profile
