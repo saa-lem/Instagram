@@ -50,3 +50,19 @@ class Comment(models.Model):
 
     def delete_comments(self):
         self.delete()
+
+class Followers(models.Model):
+    follower = models.ForeignKey(User, related_name='follower',on_delete=models.CASCADE)
+    followed = models.ForeignKey(User, related_name = 'followed',on_delete=models.CASCADE)
+
+
+    def __str__(self):
+        return f'{self.follower} follows {self.followed}'
+
+
+
+    def save_Followers(self):
+        self.save()
+
+    def delete_followers(self):
+        self.delete()
