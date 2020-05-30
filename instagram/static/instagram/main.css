@@ -1,0 +1,89 @@
+
+.inst{
+  font-family: 'Cookie', cursive;
+  font-size: 40px;
+}
+
+.form-control{
+  margin-top: 10px;
+}
+.sign{
+  width:100%;
+}
+.panel{
+  border-style: solid;
+  border-color:lightgray;
+  padding: 10px 10px 10px 10px;
+  margin-top:20px;
+
+}
+
+/* .nv{
+  display:flex;
+  justify-content: space-around;
+} */
+
+.prof-links a{
+  padding-left: px;
+  color:gray;
+  margin-left:10px;
+}
+.prof-links a:hover{
+  color:blue;
+}
+.prof-img{
+  width:15%;
+  height:auto;
+  border-radius: 50%;
+}
+.img-posts{
+  max-width: 620px;
+  height: auto;
+}
+.scroll-menu {
+
+  height: auto;
+  max-height: 500px;
+  overflow-x: auto;
+  display:block;
+}
+.card{
+  margin-top:30px;
+  max-width: 700px;
+  height: auto;
+}
+@media screen and (max-width: 991px) {
+  .img-posts,.full-profile{
+    width:75%;
+    height: auto;
+  }
+}
+.fa{
+    size: 100px;
+}
+ a{
+  text-decoration: none;
+}
+.stat{
+    display:inline;
+   
+}
+.side-bar{
+    position:fixed;
+    width:30%;
+    margin-right: 30px;
+}
+#card-b{
+    width:250px;
+}
+#reg-img{
+    max-width: 500px;
+    margin-left:30%;
+}
+.reg-panel{
+    margin-top: 40px;
+}
+.full-profile{
+  max-width: 640px;
+  height: auto;
+}
