@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="container">
+
+        <nav class="navbar navbar-inverse bg-light">
+            <div class="container-fluid nv">
+                <div class="navbar-header">
+
+                    <a class="navbar-brand text-dark inst" href="{% url 'home' %}" id="inst"><i class="fa fa-home"
+                            aria-hidden="true"></i>
+                    </a>
+                    <a class="navbar-brand text-dark inst" href="{% url 'home' %}" id="inst">Instagram</a>
+
+
+
+                </div>
+
+                <div class="col-sm-4 col-md-4 navbar-right">
+
+                    <form class="navbar-form" role="search" action="{% url 'search_results' %}">
+                        <div class="input-group">
+                            <input type="text" class="form-control" placeholder="search by Username" name="search_user">
+                            <div class="input-group-btn">
+                                <button type="submit" class="btn btn-default"><i
+                                        class="glyphicon glyphicon-search"></i></button>
+                            </div>
+                        </div>
+                    </form>
+
+
+                </div>
+                <div class="navbar-nav d-inline-flex ">
+                    {% if user.is_authenticated %}
+                    <div class="d-inline-flex prof-links">
+                        <a class="nav-item nav-link" href="{% url 'image-create' %}"><i class="fa fa-plus-square-o"
+                                aria-hidden="true">Upload</i></a>
+
+                        <a class="nav-item nav-link" href="{% url 'profile-detail' user.username %}">Profile</a>
+                        <a class="nav-item nav-link" href="{% url 'logout' %}">Logout</a>
+                    </div>
+
+                    {% else %}
+                    <div class="d-inline-flex prof-links">
+                        <a class="nav-item nav-link" href="{% url 'login' %}">Login</a>
+                        <a class="nav-item nav-link" href="{% url 'register' %}">Register</a>
+                    </div>
+
+                    {% endif %}
+
+                </div>
+
+            </div>
+        </nav>
+    </div>
+
+</body>
+
+</html>

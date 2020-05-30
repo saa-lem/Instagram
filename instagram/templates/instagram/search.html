@@ -1,0 +1,42 @@
+
+{%extends 'instagram/base.html'%}
+{% block content %}
+<div class="container">
+
+    <div class="row">
+        {% if images|length > 0 %}
+        <h1 class="text-info text-center">Found {{ images|length }} results of searched term {{message}}</h1>
+        {% else %}
+        <h1 class="text-info text-center"> Found 0 results for the search term {{message}}</h1>
+        {% endif %}
+
+    </div>
+
+    <div class="row">
+
+        {% if images %}
+        {% for image in images %}
+        <div class="col-md-4">
+            <div class="  ">
+               
+               
+                <figure>
+                    <a href="{% url 'image-detail' image.id %}"><img src="{{image.profile.profile_pic.url}}" class="img-responsive imgs" id='imag'></a>
+                        
+                        <figcaption><a href="{% url 'image-detail' image.id %}">{{image.profile}}</a></figcaption>
+                </figure>
+            
+
+<small class="text-muted">
+        <a href="{% url 'image-detail' image.id %}">View images posted by {{message}}?</a>
+</small>
+
+            </div>
+           
+
+        </div>
+        {% endfor %}
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
