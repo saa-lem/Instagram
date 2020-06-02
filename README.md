@@ -20,46 +20,47 @@ Behaviour 	Input 	Output
 
  # Clone the Repo
 
-Run the following command on the terminal: git clone https://github.com/saa-lem/Instagram.git Clone.git && cd Instagram
-Activate virtual environment
+Run the following command on the terminal: git clone https://github.com/saa-lem/Instagram.git 
+    && cd Instagram
+# Activate virtual environment
 
-Activate virtual environment using python3.6 as default handler
+    Activate virtual environment using python3.6 as default handler
 
-virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
+    virtualenv -p /usr/bin/python3.6 venv && source venv/bin/activate
 
  # Install dependancies
 
 Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
 Create the Database
 
-psql
-CREATE DATABASE instagram;
+   psql
+   CREATE DATABASE instagram;
 
  # .env file
 
 Create .env file and paste paste the following filling where appropriate:
 
-SECRET_KEY = '<Secret_key>'
-DBNAME = 'instaclone'
-USER = '<Username>'
-PASSWORD = '<password>'
-DEBUG = True
+   SECRET_KEY = '<Secret_key>'
+   DBNAME = 'instagram'
+   USER = '<Username>'
+   PASSWORD = '<password>'
+   DEBUG = True
 
 
 
  # Run initial Migration
 
-python3.6 manage.py makemigrations app
-python3.6 manage.py migrate
+    python3.6 manage.py makemigrations app
+    python3.6 manage.py migrate
 
  # Run the app
 
-python3.6 manage.py runserver
+    python3.6 manage.py runserver
 
-Open terminal on localhost:8000
+    Open terminal on localhost:8000
  # Known bugs
 
-Like and Follow functionality do not work
+Comment and the update profile functionality does not work
  # Technologies used
 
 - Python 3.6
