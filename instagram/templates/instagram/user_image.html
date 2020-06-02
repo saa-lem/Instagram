@@ -1,0 +1,31 @@
+
+{% extends 'instagram/base.html' %}
+
+
+{% block content %}
+<h2 class="text-center mb-3">Uploads by {{view.kwargs.username}}</h2>
+{% for image in images %}
+
+<div class="card card-default">
+    <div class="card-header">
+        <img src="{{image.profile.profile_pic.url}}" class="rounded-circle prof-img img-responsive" id="">
+        <a class="mr-2" href="{% url 'user-images' image.profile.user.username %}">{{ image.profile.user.username }}</a>
+    </div>
+
+    <div class="card-body">
+        <img src="{{image.image.url}}" class="img-posts img-responsive" id="">
+
+        <div class="image-metadata">
+                <i class="fa fa-heart-o  d-inline-flex icons" aria-hidden="true"><br>{{image.likes}} likes</i>
+                <i class="fa fa-comment-o  d-inline-flex icons" aria-hidden="true"></i>
+
+        </div>
+
+        <h2><a class="" href="{% url 'image-detail' image.id %}">{{ image.image_name }}</a></h2>
+        <p class="">{{ image.image_caption }}</p>
+    </div>
+</div>
+
+{% endfor %}
+
+{% endblock %}
