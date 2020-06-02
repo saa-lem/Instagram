@@ -33,18 +33,18 @@ Run the following command on the terminal: git clone https://github.com/saa-lem/
 Install dependancies that will create an environment for the app to run pip3 install -r requirements.txt
 Create the Database
 
-   psql
-   CREATE DATABASE instagram;
+    psql
+    CREATE DATABASE instagram;
 
  # .env file
 
 Create .env file and paste paste the following filling where appropriate:
 
-   SECRET_KEY = '<Secret_key>'
-   DBNAME = 'instagram'
-   USER = '<Username>'
-   PASSWORD = '<password>'
-   DEBUG = True
+    SECRET_KEY = '<Secret_key>'
+    DBNAME = 'instagram'
+    USER = '<Username>'
+    PASSWORD = '<password>'
+    DEBUG = True
 
 
 
